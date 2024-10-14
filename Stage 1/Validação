@@ -1,0 +1,10 @@
+#Programa que valida so dados de um usuario a partir de um valor que ele informa.
+#Criando uma interação de numero(n) com o usuario.
+n = int(input('digite qualquer numero entre -100 e 100: '))
+
+#criando a condição e mostrando o resultado.
+if n >= 1 and n <= 100 or n >= -100 and n <= -1:
+   print('Um dos criterios foi atendido')
+else:
+   print('Número inválido, encerrando o programa!')
+#fim
