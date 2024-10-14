@@ -1,0 +1,13 @@
+#Criando um programa que faz contagem regressiva.
+print('Contagem Regressiva')
+print('-------------------')
+#import de modulo
+import time
+#contador
+x = 10
+#loop
+while x >= 0:
+  print(x)
+  x = x - 1
+  time.sleep(1)
+print('FIM')
