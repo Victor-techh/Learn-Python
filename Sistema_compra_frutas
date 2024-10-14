@@ -1,0 +1,17 @@
+#Programa que mostra 3 opções de frutas para que o cliente escolha a #fruta e a quantidade. Depois ele calcula-ra juntando as #informaaçoes e mostrara ao usuario quanto custa.
+#Mostrando um painel com as opções de frutas, preços e identificador #de escolha com numeros.
+print('Bem vindo ao Tela de Frutas app \nOpções de fruta:\nMaçã 1 --- R$2.30\nLaranja 2 --- R$3.60\nBanana 3 --- R$1.85')
+#Criando a interação com o usuario
+produto_escolhido = int(input('Digite o numero da sua escolha: '))
+quantidade = int(input('Quantas unidades? '))
+#Criando condições e mostrando resultados
+if (produto_escolhido == 1):
+     valor = quantidade * 2.30
+     print('Total: {}'. format(valor))
+elif (produto_escolhido == 2):
+     valor = quantidade * 3.60
+     print('Total: {}'. format(valor))
+     if (produto_escolhido == 3):
+           valor = quantidade * 1.85
+           print('Total: {}'. format(valor))
+#fim
