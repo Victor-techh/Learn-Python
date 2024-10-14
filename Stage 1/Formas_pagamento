@@ -1,0 +1,27 @@
+#Programa que calcula formas de pagamento. 
+#Exibição
+print('Formas de Pagamento\n'
+'A vista (1)\n'
+'Parcelado em 3x (2)\n'
+'Parcelado em 5x (3)\n'
+'Parcelado em 10x (4)\n')
+#Dados de entrada do usuário.
+valor = float(input('Digite o valor do produto: '))
+forma = int(input('Digite a forma de pagamento: '))
+#Processamento
+if forma == 1:#desconto de 5%
+  valor_final = valor - (valor * 0.05)
+  print('valor {} com desconto de 5%: {:.2f}'.format(valor, valor_final))
+elif forma == 2: #sem juros 
+  valor_final = valor / 3
+  print('valor {} parcelado em 3x: {:.2f}'.format(valor, valor_final))
+elif forma == 3: #Juros de 2%
+  valor_final = valor + (valor * 0.02)
+  parcelamento = valor_final / 5
+  print('valor {} parcelado em 5x: {:.2f}'.format(valor_final, parcelamento))
+elif forma == 4: #Juros de 8%
+  valor_final = valor + (valor * 0.08)
+  parcelamento = valor_final / 10
+  print('valor {} parcelado em 10x: {:.2f}'.format(valor_final, parcelamento))
+else:
+  print('Forma de pagamento inválida')
