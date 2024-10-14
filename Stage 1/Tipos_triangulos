@@ -1,0 +1,20 @@
+#Programa que recebe tres valores, calcula e mostra se o triangulo é
+#equilatero, isosceles ou escaleno.
+print('Descubra o tipo de triangulo')
+#Criando interação com o usuario. "tam" (tamanho)
+tam1 = int(input('digite o valor primeiro lado: '))
+tam2 = int(input('digite o valor segundo lado: '))
+tam3 = int(input('digite o valor terceiro lado: '))
+#Condições e resultados. Para que se exista um triangulo, todos os lados devem
+#possuir valor maior que zero. Triangulo escaleno todos os lados tem valores
+#diferentes, Isosceles dois lados possuem mesmo valor, Equilatero todos os la-
+#dos são iguais.
+if tam1 > 0 and tam2 > 0 and tam3 > 0:
+   if tam1 + tam2 > tam3 and tam2 + tam3 > tam1 and tam3 + tam1 > tam2:
+       if tam1 != tam2 and tam2 != tam3 and tam3 != tam1:
+           print('Triangulo Escalano')
+       else:
+           if tam1 == tam2 and tam2 == tam3:
+               print('Triangulo Equilátero')
+           else:
+               print('Triangulo Isosceles')
