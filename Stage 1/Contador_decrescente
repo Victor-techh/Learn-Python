@@ -1,0 +1,8 @@
+#Programa contador decrescente
+#criando variaveis. 
+inicio = int(input('digite o número de inicio: '))
+final = int(input('digite o número final: '))
+x = inicio 
+while x >= final:
+  print(x)
+  x = x - 1
