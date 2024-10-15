@@ -1,0 +1,11 @@
+#programa que mostra valores CRESCENTES com um intervalo especificado
+# pelo usuario. Os números são pares.
+#Recebendo dados do usuario
+inicial = int(input('digite o numero de inicio: ')) #interação com o usuario
+final = int(input('digite o numero final com valor superior ao inicial: ')) #interação com o usuario
+x = inicial #Variavel que admite que x recebera o valor da variavel 'inicial'.
+#Processamento
+while x <= final: #loop de repetição com condição a ser satisfeita.
+   if x % 2 == 0: #condição para que seja mostrado numeros pares.
+       print(x)
+   x = x + 1 #Calculo de incremento para o loop.
