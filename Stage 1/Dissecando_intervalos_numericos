@@ -1,0 +1,33 @@
+#Programa que lêr um numero inicial e final fornecido pelo usuario. 
+#calcule e mostre na tela: a quantidade de numero inteiros e positivos, 
+#a quantidade de numeros pares,  
+#a quantidade numeros impares, 
+#a respectiva media de cada um dos itens anteriores.
+inicio = int(input('Digite o numero inicial: ')) #dados do usuario
+final = int(input('Digite o numero final: ')) #dados do usuario
+qtd_positivo = 0 #variavel quantidade de numeros positivos
+qtd_par = 0 #Variavel quantidade de numeros pares
+qtd_imp = 0 #variavel quantidade de numeros impares
+soma_pos = 0 #variavel soma dos numeros positivos
+soma_par = 0 #variaveis soma dos numeros pares
+soma_imp = 0 #variavel soma dos numeros impares
+cont = inicio #variavel contador
+if inicio < final:
+   while cont <= final: #laço de repetição
+       if cont > 0:
+           qtd_positivo = qtd_positivo + 1 #calcula da soma
+           soma_pos = soma_pos + cont
+       if cont %2 == 0: #laço de numero divisivel por 2 com resto 0
+           qtd_par = qtd_par + 1 #calculo para a obtenção do numero par.
+           soma_par = soma_par + cont
+       else: #laço de numero divisivel por 2 com resto 1.
+           qtd_imp = qtd_imp + 1 #Calculo para o numero impar.
+           soma_imp = soma_imp + cont #soma se relacinando com o contador
+       cont = cont + 1  # calculo da relação da quantidade de vezes que a soma ocorrera
+media_positivo = soma_pos / qtd_positivo #Calculo da média dos numeros positivos
+media_par = soma_par / qtd_par #Calculo da média dos numeros pares
+media_impar = soma_imp / qtd_imp #Calculo da média dos numeros impares
+print('Existem {} numeros inteiros e positivos'.format(qtd_positivo, cont)) #resultdos
+print('Existem {} numeros pares'.format(qtd_par, cont)) #resultados.
+print('Existem {} numeros impares'.format(qtd_imp))
+print('A média de números inteiros positivos é {}'.format(media_positivo))
