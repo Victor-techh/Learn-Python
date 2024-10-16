@@ -1,0 +1,15 @@
+#Programa que recebe 4 nomes e sorteia uma ordem de apresentação.
+#importe de modulos;
+import random #para gerar numeros aleatorios.
+#variaveis
+nomes = []
+#loop de recebimento de quatro nomes fornecidos pelo usuario.
+for i in range(4): #loop de repetição com um contador.
+   nome = input(f'Digite o {i + 1}° nome: ') #variavel que recebe do usuario.
+   nomes.append(nome) #VAriavel que recebe e acumula os dados do usuario.
+#embaralhador da lista de nomes.
+random.shuffle(nomes)
+#Mostra os nomes embaralhados.
+print('\nNomes Embaralhados:')
+for nome in nomes:
+   print(nome)
