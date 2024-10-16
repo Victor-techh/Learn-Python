@@ -1,0 +1,14 @@
+#Programa que lêr dois numeros e mostra o resultado da multiplicalçao entre eles. Porém
+# sem utilizar o simbolo de Multiplicação '*', somente soma.
+print('¬¬¬Multiplicação¬¬¬')#Apresentação
+x = int(input('Digite o primeiro numero: '))#Variaveis de interação com o usuario.
+y = int(input('Digite o segundo numero: '))#Variaveis de interação com o usuario.
+cont = 1 #Variaveis e contador
+multi = 0
+while cont <= x: #Laço de repetição. 'x' está sendo um numero qualquer que sera informado
+   #pelo usuario.
+   multi = multi + y
+   cont = cont + 1 #aqui esta o dado condicional da repetição. 'cont' recebera um valor
+   #que ira contar quantas vezes o laço irá ocorrer. Esse dado esta vindo da linha 10, que
+   # por sua vez vem da linha 6.
+print('o valor da {} x {} = {}'. format(x, y, multi)) #Mostrando resultados
