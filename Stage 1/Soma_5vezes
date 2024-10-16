@@ -1,0 +1,13 @@
+#Programa que calcula a soma de cinco valores inteiros. 
+#Cada valor sera informado pelo usuario. 
+#Faremos isso utilizando uma variavel acumuladora e uma variavel contadora.
+#Declarando variaveis.
+soma = 0 #acumalador
+cont = 1 #contador
+#Criando o laço de repetição e a interação com o usuario.
+while cont <= 5: #laço e seu numero de repetições.
+   x = int(input('digite o {}º número: '.format(cont))) #interação com o usuario.
+   soma = soma + x #calculo laçado ao loop
+   cont = cont + 1 #calculo para que a cada soma o contador ira contabilizar
+   # mais 1 vez ate que aconteça 5 vezes como foi definido na linha 8.
+print('somatorio {}'.format(soma)) #resultado.
