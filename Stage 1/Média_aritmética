@@ -1,0 +1,13 @@
+#Programa que calcula a media aritmetica de 5 notas ultilizando laço de repetição e
+
+# contador
+#variaveis
+soma = 0
+cont = 1
+#processamento e interação com usuario.
+while cont <= 5: #conta 5 vezes
+   x = float(input('Digite a {}° nota: '. format(cont))) #recebe do usuario
+   soma = soma + x
+   cont = cont + 1
+media = soma / 5
+print('Sua média é {}'.format(media))
