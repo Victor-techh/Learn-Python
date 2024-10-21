@@ -1,0 +1,13 @@
+#Programa Papagaio 
+#repete a mensagem que o usuario digitar, com opção de sair.
+#mensagem para usuario.
+print('Aqui é o Lôro.\nDigite uma mensagem que irei repetir'
+     'para você como um bom papagaio que sou!\nPara sair digite'
+     ' sair: ')
+#Loop
+while True:
+   texto = input('')
+   print(texto)
+   if texto.upper() == 'SAIR':
+       break
+print('Ok, acabou a brincadeira. Até a próxima trouxa.')
