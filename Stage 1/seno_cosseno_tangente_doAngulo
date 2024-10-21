@@ -1,0 +1,12 @@
+#programa que ler um angulo qualquer e mostra na tela o valor do seno,
+# cosseno e tangente deste angulo.
+#importe de modulo
+import math
+#Variavel que recebe do usuario.
+angulo = float(input('Digite o valor do angulo: '))
+#processo
+seno = math.sin(angulo)
+cosseno = math.cos(angulo)
+tangente = math.tan(angulo)
+#mostrando resultados
+print('Angulos e suas medidas\nseno:{:.2f}\ncosseno: {:.2f}\ntangente: {:.2f}'.format(seno, cosseno, tangente))
