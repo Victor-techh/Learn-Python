@@ -1,0 +1,13 @@
+#Programa que ler o comprimento do cateto oposto e do cateto
+# adjacente de um triangulo retangulo, calcule e mostre o comprimento da hipotenusa.
+#importe de modulo hipotenusa
+from math import hypot
+#Variavel que recebe do usuario.
+cat_opos = float(input('Digite o comprimento do cateto oposto incluindo '
+  'ponto para número decimal: '))#Cateto oposto;
+cat_adja = float(input('Digite o comprimento do cateto adjacente incluindo '
+  'ponto para número decimal:'))#cateto adjacente
+#processo
+hipotenusa = hypot(cat_opos, cat_adja)
+#mostrando resultados
+print('hipotenusa: {:.2f}'.format(hipotenusa))
