@@ -1,0 +1,5 @@
+#Programa que escreve valores de 1 a 5 crescentes.
+x = 1 #variavel contador
+while x <= 5: #laço de repetição 
+   print(x) 
+   x += 1 # incremento para que aconteça a repetição
