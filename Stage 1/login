@@ -1,0 +1,13 @@
+#Programa que funciona como login. Exigindo nome do usuario e senha.
+#apresentação
+print('Bem vindo!')
+#interaçao com usuario dentro dentro do loop.
+while True:
+   nome = input('Digite seu email:\n')
+   if nome != 'vaidacaerto@vai.com':
+       print('Usuario inexistente')
+       continue
+   senha = input('Senha:\n')
+   if senha == '123456':
+       print('acesso concedido')
+       break
