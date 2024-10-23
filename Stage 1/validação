@@ -1,0 +1,8 @@
+#d24. Programa que ler o nome de uma cidade e informa se ela começa ou não com o nome "SANTO".
+#Dados do usuario com comando 'strip' para remover espaços em branco caso o usuario digite.
+cidade = str(input('Digite o nome da cidade: ').strip())
+#impressão com o comando 'upper' para que independente da forma que o usuario digitou, a impressão fique em maiúsculo sendo possivel verificar a palavra.
+if cidade[:5].upper() == 'SANTO':
+  print('A cidade começa com o nome "SANTO"')
+else:
+  print('A cidade não começa com o nome "SANTO"')
