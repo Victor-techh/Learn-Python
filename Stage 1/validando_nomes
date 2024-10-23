@@ -1,0 +1,9 @@
+#d25. Programa que ler o nome de uma pessoa vinda do usuario, retira os possiveis espaços desnecessarios, e informa se o nome possui ‘SILVA’ é verdadeiro. 
+#Dados do usuario;
+nome = str(input('Digite seu nome completo: ')).strip()
+#impressão com comando com uma condicional 'silva' dentro de nome ondo sera convertido tudo para caixa alta para ler o nome SILVA caso tenha.
+if 'SILVA' in nome.upper():
+  print('Você é um guerreiro Silva')
+else:
+  print('Você não é um guerreiro Silva')
+#FIM
