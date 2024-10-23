@@ -1,0 +1,8 @@
+#Programa que recebe uma lista do usuario e mostra automaticamente os itens e a quantidade.
+# de itens existentes;
+#Variaveis
+#dados do usuario;
+lista = input('Escreva a sua lista de itens separadas por vírgula: ')
+#processo e amostra de resultados;
+print('sua lista:',lista)
+print('sua lista possui {} itens.'.format(len(lista.split())))
