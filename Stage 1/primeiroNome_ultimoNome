@@ -1,0 +1,6 @@
+#d27.programa que recebe um nome de uma pessao e nostra o primeiro e o ultimo nome.
+#recebendo dados do usuario;
+nome = str(input('Digite seu nome completo: ')).strip()
+#separando os nomes;
+print('seu primeiro nome é: {}'.format(nome.split()[0]))
+print('seu último nome é: {}'.format(nome.split()[-1]))
