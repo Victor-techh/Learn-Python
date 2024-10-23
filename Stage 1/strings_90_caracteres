@@ -1,0 +1,24 @@
+#praticando definicao e utilizacao de funcao. programa que recebe uma string ate
+#90 caracteres e retorna false solicitando um texto menor caso o proprio ultrapasse 
+#90. 
+
+#interaco com o usuario;
+texto = input('Digite seu pequeno texto: ')
+#funcao que recebe uma string e retorna false caso o texto ultrapasse 90 caracteres;
+def verifica_tamamho(texto):
+  """verifica se o texto possui mais de 90 caracteres.
+
+  Args:
+    texto: A string que sera verificada.
+
+  Returns: 
+    False: Caso o texto ultrapasse 90 caracteres.
+    True: Caso o texto nao ultrapasse 90 caracteres.
+  """
+  if len(texto) > 90:
+    return False
+  else:
+    return True
+#chamando a funcao e mostrando resultados.
+texto = verifica_tamamho(texto)
+print(texto)
