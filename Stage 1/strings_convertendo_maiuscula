@@ -1,0 +1,17 @@
+#programa recebe uma string do usuario e que deixa todas as letras das palavras 
+#em maiusculas, e que quando o usuario digita a opçao sair o app fecha.
+
+#apresntação do app.
+print("Bem vindo ao app de maiusculas")
+input('Digite enter para o app iniciar!')
+#entrada do usuario.
+nome = input('Digite seu nome completo ou "S" para sair:\n ')
+#loop e amostra de resultados. 
+while True:
+  if nome.upper() == 'S':
+    print('Obrigado por usar o app! Encerrando...')
+    break
+  else:
+    print(nome.upper())
+    nome = input('Digite seu nome completo: ')
+#fim
