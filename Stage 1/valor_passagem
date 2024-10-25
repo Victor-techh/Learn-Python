@@ -1,0 +1,16 @@
+#Programa que pergunte a distancia de uma viagem em km.
+#Calcule o preço da passagem, cobrando R$0,50 por Km para viagens de ate
+#200km e R$0,45 para viagens mais longas.
+
+#apresentaçao.
+print('Bem Vindo ao app EconoTur.')
+#dados do usuario.
+km_cliente = int(input('Quantos Km de distancia fica seu destino? '))
+valor_pass_menos_200km = km_cliente * 0.50
+valor_pass_mais_200km = km_cliente * 0.45
+#condicinal que trata dos valores de passagem em relação a distancia.
+if km_cliente <= 200:
+   print('Preço da passagem:\nR${}'.format(valor_pass_menos_200km))
+else:
+   print('Preço da passagem:\nR${:.2f}'.format(valor_pass_mais_200km))
+#fim
