@@ -1,0 +1,12 @@
+#Programa que ler um ano qualquer e informa se é ou não bissexto.
+
+#Apresentação.
+print('Quer saber se o ano é bissexto?')
+#Dados do usuario.
+ano = int(input('Digite o ano que você deseja consultar:'))
+#Condicinal que afirma ou nega se o ano informado pelo usuario é bissexto.
+if (ano % 4 == 0 and ano % 100 != 0) or ano % 400 == 0:
+   print('O ano {} é bissexto.'.format(ano))
+else:
+   print('O ano {} não é bissexto.'.format(ano))
+#fim
