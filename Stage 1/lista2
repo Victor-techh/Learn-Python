@@ -1,0 +1,19 @@
+#Programa que recebe um texto do usuario e faz uma lista com cada palavra.  
+
+#Apresentação do app. 
+print('Seja bem vindo ao app\nTexto é lista')
+#lista varia.
+lista = []
+#Variavel que recebe do usuario.
+lista = input('Digite um texto aqui ou "S" para encerrar:\n')
+#loop como amostra de resultados.
+while True:
+  if lista.upper() == 'S':
+    print('Programa encerrado')
+    break
+  else: 
+    print('Seu texto em formato de lista:\n',lista.strip().split())
+    #condição que mantem o loop rodando.
+    lista = input('Digite um texto aqui ou "S" para encerrar:\n')
+#fim
+
