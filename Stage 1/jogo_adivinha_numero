@@ -1,0 +1,31 @@
+#Jogo de adivinhação de numeros entre 0 e 5.
+
+#importando módulos.
+import random
+#Apresentação.
+print('Jogando Adivinhe o Número! \nVamos Jogar?')
+#Gerandor de número aleatorio.
+numero_do_computador = random.randint(0,5)
+#condicional que recebe o numero do usuario, informa se ele acertou ou errou, e mostra
+#opção de continuar ou encerrar o jogo.
+while True:
+   palpite_usuario = int(input('Digite um número entre 0 e 5?'))
+   if palpite_usuario == numero_do_computador:
+    print('Parabens você acertou!')
+    print('O número que escolhi foi {}'.format(numero_do_computador))
+    continuar_joganado = str(input('Deseja continuar? y/n?'))
+    if continuar_joganado == 'y':
+      continue
+    else:
+      print('Obrigado por jogar!\nAté a próxima!')
+      break
+   else:
+      print('Você errou!')
+      print('O numero que escolhi foi {}'.format(numero_do_computador))
+      continuar_joganado = str(input('Deseja continuar? y/n?'))
+      if continuar_joganado == 'y':
+        continue
+      else:
+        print('Obrigado por jogar!\nAté a próxima!')
+        break
+#fim
