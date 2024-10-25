@@ -1,0 +1,20 @@
+#Programa Foto Sensor de Velocidade.
+#1.Programa que leia a velocidade de um carro;
+#2.Se ele ultrapassar 80Km/h, mostra uma mensagem informando que o motorista foi multado.
+#3.A multa custara 7 reais por cada km excedido.
+
+#Apresentação.
+print('Foto Sensor AMC')
+#Variaveis,condicinais,loops.
+vel_usuario = int(input('Digite o valor da velocidade: '))
+valor_multa = (vel_usuario - 80) * 7
+while True:
+   if vel_usuario > 80:
+       print('Sua velocidade foi {}.'.format(vel_usuario))
+       print('Você ultrapassou o limite de velocidade\nSua multa sera de '
+             'R${} reais.'.format(valor_multa))
+       break
+   else:
+       print('Parabens, sua velocidade foi {}.\nNão foi gerada nenhuma multa.'.format(vel_usuario))
+       break
+#fim
