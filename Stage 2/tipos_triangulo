@@ -1,0 +1,19 @@
+#1. Desenvolva um programa que leia o comprimento de três retas
+#2. e diga ao usuário se elas podem ou não formar um triângulo.
+#3. acrescentando o recurso de mostrar que tipo de triângulo será formado.
+
+#interação com o usuario sobre o comprimento de reta.
+a = float(input('Digite o tamanho do 1º lado:\n '))
+b = float(input('Digite o tamanho do 2º lado:\n '))
+c = float(input('Digite o tamanho do 3º lado:\n '))
+#Condicional para se formar um triangulo quaquer.
+if a + b > c and a + c > b and b + c > a:
+  print('É possível montar um triângulo')
+  if a == b == c:
+    print('Equilátero')
+  elif a == b or a == c or b == c:
+    print('Isósceles')
+  else:
+    print('Escaleno')
+else:
+  print('Não é possível montar um triâgulo pois a soma de dois lados informados é menor do que o terceiro lado.')
