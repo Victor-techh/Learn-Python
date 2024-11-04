@@ -1,0 +1,46 @@
+#Crie um programa que faça o computador jogar Jokenpô com você.
+#Apresentação
+print('*/ / V Jokenpô V \ \ *')
+#modulo para gerar numeros aleatorios
+import random
+import time
+#lista
+lista = ['Pedra', 'Papel', 'Tesoura']
+#gerando escolha aleatoria do computador.
+escolha_computador = random.choice(lista)
+#inicio do jogo e interação com usuário
+iniciar_encerrar = input('Vamos jogar? se sim digite "S" se não "N"\n:')
+if iniciar_encerrar.upper() == "S":
+  print("ok, vamos lá!")
+  escolha_usuario = input('Escolha e digite\nP-(Pedra)\nPA-(Papel)\nT-(Tesoura)\n: ')
+  print('Jo')
+  time.sleep(0.5)
+  print('Ken')
+  time.sleep(0.5)
+  print('Pô')
+  time.sleep(0.5)
+  #condições para se ganhar e perder
+  if escolha_usuario.upper() == 'P' and escolha_computador.upper() == 'PEDRA':
+      print(f'Você:{escolha_usuario}edra e computador:{escolha_computador}\n Empate!')
+  elif escolha_usuario.upper() == 'P' and escolha_computador.upper() == 'PAPEL':
+      print(f'Você:{escolha_usuario}edra e computador:{escolha_computador}\nVocê perdeu!')
+  elif escolha_usuario.upper() == 'P' and escolha_computador.upper() == 'TESOURA':
+      print(f'Você:{escolha_usuario}edra e computador:{escolha_computador}\nVocê ganhou!')
+  elif escolha_usuario.upper() == 'PA' and escolha_computador.upper() == 'PEDRA':
+      print(f'Você:{escolha_usuario}pel e computador:{escolha_computador}\nVocê ganhou!')
+  elif escolha_usuario.upper() == 'PA' and escolha_computador.upper() == 'PAPEL':
+      print(f'Você:{escolha_usuario}pel e computador:{escolha_computador}\nEmpate!')
+  elif escolha_usuario.upper() == 'PA' and escolha_computador.upper() == 'TESOURA':
+      print(f'Você:{escolha_usuario}pel e computador:{escolha_computador}\nVocê perdeu!')
+  elif escolha_usuario.upper() == 'T' and escolha_computador.upper() == 'PEDRA':
+      print(f'Você:{escolha_usuario}esoura e computador:{escolha_computador}\nVocê perdeu!')
+  elif escolha_usuario.upper() == 'T' and escolha_computador.upper() == 'PAPEL':
+      print(f'Você:{escolha_usuario}esoura e computador:{escolha_computador}\nVocê ganhou!')
+  elif escolha_usuario.upper() == 'T' and escolha_computador.upper() == 'TESOURA':
+      print(f'Você:{escolha_usuario}esoura e computador:{escolha_computador}\nEmpate!')
+  else:
+      print('inválido, recomece o jogo!')
+elif iniciar_encerrar.upper() == "N":
+  print("ok, até a próxima!")
+else:
+  print('inválido, recomece o jogo!')
