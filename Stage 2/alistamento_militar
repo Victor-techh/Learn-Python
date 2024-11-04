@@ -1,0 +1,35 @@
+#039: 1.Faça um programa que leia o ano de nascimento de uma pessoa e informe, de acordo com a sua idade,
+#2.se ele ainda vai se alistar ao serviço militar,
+#3.se é a hora exata de se alistar
+#ou se já passou do tempo do alistamento.
+#Seu programa também deverá mostrar o tempo que falta ou que passou do prazo.
+
+text = 'alistamento militar'
+#Abertura do programa
+print(19 * '#')
+print('Alistamento Militar')
+print(19 * '#')
+
+#loop com interação e validação de dados.
+while True:
+  try:
+    ano_nascimento = int(input('Digite o ano de nascimento: '))
+    if ano_nascimento <= 0 or ano_nascimento > 2024:
+      print('Ano inválido! Digite um ano que não seja maior que 2024')
+    else:
+      break#para porque o ano informado é válido e sai do loop dando continuidade ao programa.
+  except ValueError:
+    print('Digite um ano válido')
+
+#continuação do programa
+idade = 2024 - ano_nascimento
+complete_mais = 18 - idade #A variavel 'complete_mais' se refere aos anos que o individuo precisa completar
+
+#Condicional
+if idade == 18:
+  print('Você tem deve se alistar IMEDIATAMENTE.'.format(ano_nascimento, idade))
+elif idade > 18:
+  print(f'Sinto muito você ultrapassou a idade permitida pois tem {idade} anos!'.format(ano_nascimento, idade))
+elif idade < 18:
+  print(f'Você ainda NÃO pode se alistar pois tem {idade} anos!\nFaltam {complete_mais} anos!'.format(ano_nascimento, idade, complete_mais))
+#fim
