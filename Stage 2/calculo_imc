@@ -1,0 +1,25 @@
+#1.Desenvolva uma lógica que leia o peso
+#2.e a altura de uma pessoa,
+#3.calcule seu Índice de Massa Corporal (IMC) e
+#4.mostre seu status, de acordo com a tabela abaixo:
+  #IMC abaixo de 18,5: Abaixo do Peso
+  #Entre 18,5 e 25: Peso Ideal
+  #25 até 30: Sobrepeso
+  #30 até 40: Obesidade
+  #Acima de 40: Obesidade Mórbida
+
+#interação como usuario.
+peso = float(input('Digite seu peso: '))
+altura = float(input('Digite seu altura inserindo um ponto exemplo --->>> 1.60cm : '))
+imc = peso / altura ** 2
+#condicional para tratar dos status segundo a tabela acima:
+if imc <= 18.5:
+  print(f'valores abaixo de 18.5 indica baixo do peso.\nSeu IMC é {imc:.2f}. Consulte um médico!')
+elif imc >= 18.6 and imc <= 25:
+  print(f'Valores entre 18.6 e 25 indica peso ideal.\nSeu IMC é {imc:.2f}. Parabéns!')
+elif imc >= 25.1 and imc <= 30:
+  print(f'Valores entre 25.1 e 30 indica sobrepeso.\nSeu IMC é {imc:.2f}. Consulte um médico!')
+elif imc >= 30.1 and imc <= 40:
+  print(f'valores entre 31.1 e 40 indica obesidade.\nSeu IMC é {imc:.2f}. Consulte um médico!')
+else:
+  print(f'Valores acima de 40 indica obesidade morbida.\nSeu IMC {imc:.2f}. Colsulte um médico urgente!')
