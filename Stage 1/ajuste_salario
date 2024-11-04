@@ -1,0 +1,16 @@
+#Programa que pergunta o salario de um funcionario e calcula o valor do
+#seu aumento.
+#Para salarios superiores a R$1250.00, calcule um aumento de 10%.
+# Para inferiores ou iguais a R$1250.00 o aumento é de 15%.
+
+#Dados do usuario.
+salario = float(input('Digite o valor do seu salario atual: '))
+#Calculo de ajuste salarial.
+aumento_10 = (salario * 0.10) + salario
+aumento_15 = (salario * 0.15) + salario
+#Condição para ajuste salarial.
+if salario >= 1250:
+   print('Seu salario atual é R${}.\nCom um aumento de 10% será R${:.2f}.'.format(salario,aumento_10))
+else:
+   print('Seu salario atual é R${}.\nCom um aumento de 15% será R${:.2f}.'.format(salario,aumento_15))
+#fim
