@@ -1,0 +1,15 @@
+#Programa que ler 3 numeros e mostre qual é o maior e qual é o menor.
+#Apresentação.
+
+#Contador e lista vazia.
+i = 1
+numeros = []
+#recebe tres numeros do usuario.
+while i <= 3:
+   numero = int(input('Digite o {}º numero: '.format(i)))
+   numeros.append(numero)
+   i += 1
+maior = max(numeros) #variavel que seleciona automaticamente o numero
+#maior valor da lista usando o comando 'max'.
+print('Dos numeros fornecidos o de maior valor é {}.'.format(maior))
+#fim
