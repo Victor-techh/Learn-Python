@@ -1,0 +1,17 @@
+#contagem regressiva para fogos de artifício
+
+#import de modulo
+import time
+#variavel
+texto1 = 'Lançamento de Fogos de Artifício'
+texto2 = 'Contagem regressiva' 
+#Contagem regressiva 
+print(texto1)
+time.sleep(2)
+print(texto2)
+time.sleep(2)
+#loop de contagem regressiva
+for c in range(10, -1, -1):
+  print(c)
+  time.sleep(1)
+print('BUM! BUM! POOOW!') 
