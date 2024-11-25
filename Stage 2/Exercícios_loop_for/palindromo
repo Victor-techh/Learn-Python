@@ -1,0 +1,16 @@
+#Crie um programa que leia uma frase qualquer e diga se ela é um palíndromo,
+#desconsiderando os espaços. Exemplos de palíndromos: APÓS A SOPA, A SACADA DA CASA,
+#A TORRE DA DERROTA, O LOBO AMA O BOLO, ANOTARAM A DATA DA MARATONA.
+
+frase = str(input('Digite uma frase:\n')).upper() #variavel que recebe a frase e armazena em maiusculo  
+palavras = frase.split() #variavel com as palavras listadas
+f_junta = ''.join(palavras) #variavel que junta todas as palavras sem espaço
+f_inverso = '' #variavel string vazia
+
+for letra in range(len(f_junta)-1,-1,-1): #-1 é o ponto de partida indice, -1 é que a direção é contrária, e -1 é que decresce 1  por vez.
+  f_inverso += f_junta[letra]
+print(f_junta,'|', f_inverso)
+if f_junta == f_inverso:
+  print('A frase é um palíndromo')
+else:
+  print('A frase não é um palíndromo')
