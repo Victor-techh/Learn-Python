@@ -1,5 +1,5 @@
-Programa que ler o peso de cinco pessoas. 
-No final, mostra qual foi o maior e o menor peso lidos.
+#Programa que ler o peso de cinco pessoas. 
+#No final, mostra qual foi o maior e o menor peso lidos.
 
 #lista
 pesos_pes = [] #peso das pessoas
