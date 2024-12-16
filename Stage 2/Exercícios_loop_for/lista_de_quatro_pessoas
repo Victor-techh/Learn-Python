@@ -1,0 +1,62 @@
+#Programa que ler o nome, idade e sexo de 4 pessoas.
+#E mostre: a média de idade do grupo, o nome do homem mais velho 
+#e quantas mulheres têm menos de 20 anos.
+
+#listas + sublista, e outras variaveis
+pessoas = [[],[],[],[]] #lista com 4 sublistas
+nome_homem_mais_velho = ''
+idade_homem_mais_velho = 0
+mulher_menos_vinte = 0
+nome_mulheres = ''
+idade_mulheres = 0
+for i in range(1,5):
+  while True: #validação do nome
+    nome = input(f'Digite o nome da {i}° pessoa:\n ').capitalize()
+    if nome.isalpha():
+      break
+    else:
+      print('Digite apenas letras!')
+
+  while True: #validação da idade
+    try:
+      idade = int(input(f'Digite a idade da {i}° pessoa:\n '))
+      if 0 <= idade <= 115:
+        break
+      else:
+        print('Idade inválida. Digite uma idade entre 0 e 115.')
+    except ValueError: 
+      print('Digite um número inteiro!')
+
+  while True: 
+    sexo = input(f'Digite seu sexo da {i}° pessoa (M/F):\n ').upper()
+    if sexo in 'MF':
+      break
+    else:
+      print('Digite apenas M ou F!')
+
+  pessoas[i-1] = [nome,idade,sexo] #lista atualizada com os dados 
+ 
+#variaveis para saber a idade media do grupo 
+idades = [pessoa[1] for pessoa in pessoas]
+idade_media = sum(idades) / 4
+
+#encontrar o homem mais velho
+for pessoa in pessoas:
+  if pessoa[2] == 'M':
+    if pessoa[1] > idade_homem_mais_velho:
+      nome_homem_mais_velho = pessoa[0]
+      idade_homem_mais_velho = pessoa[1]
+
+#contar quantas mulheres possuem menos de 20 anos. 
+for pessoa in pessoas:
+  if pessoa[2] == 'F':
+    if pessoa[1] < 20:
+      mulher_menos_vinte += 1
+      nome_mulheres = pessoa[0]
+      idade_mulheres = pessoa[1]
+
+#Resultados
+print(pessoas)
+print(f'A idade média do grupo é de {idade_media:.2f} anos.')
+print(f'O homem mais velho deste grupo se chama {nome_homem_mais_velho}, sua idade é {idade_homem_mais_velho} anos.')
+print(f'A quantidade de mulheres com menos de 20 anos é de {mulher_menos_vinte}.')
