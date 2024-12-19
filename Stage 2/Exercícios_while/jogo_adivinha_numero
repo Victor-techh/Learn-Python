@@ -1,0 +1,36 @@
+#jogo do DESAFIO 28 onde o computador vai “pensar” em um número entre 0 e 10 MELHORADO.
+#Só que agora o jogador vai tentar adivinhar até acertar, mostrando no final quantos palpites foram
+#necessários para vencer.
+
+#importando módulos.
+import random
+
+#Gerandor de número aleatorio.
+numero_do_computador = random.randint(0,10)
+#contador
+tentativas = 0
+#interação
+
+while True: #loop principal do jogo
+  while True: #loop que valida a entrada o usuario solicitando um numero inteiro 
+    try:
+      palpite_usuario = int(input('Digite um número entre 0 e 10:\n'))
+      break
+    except ValueError:
+      print('-'*50)
+      print('Você não digitou uma número válido, tente novamente:\n')
+  
+  if palpite_usuario > 10 or palpite_usuario < 0:
+    print('-'*50)
+    palpite_usuario = int(input('INVALIDO! Digite um número entre 0 e 10:\n'))
+  else:
+    tentativas += 1
+    if palpite_usuario == numero_do_computador:
+      print('-'*50)
+      print(f'Parabéns, você acertou. Eu pensei no número {numero_do_computador}.')
+      print(f'Você precisou de {tentativas} tentativas para acertar.')
+      break
+    else:
+      print('-'*50)
+      print('Você errou, tente novamente.')
+#fim
