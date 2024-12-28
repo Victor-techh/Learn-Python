@@ -1,0 +1,15 @@
+#Programa que recebe um número qualquer e calcula o seu fatorial.
+
+#modulos
+from math import factorial
+#leitura e variaveis extras
+n = int(input('Digite um número:\n'))
+contador = n
+#fatorial
+fatorial = factorial(n)
+#loop
+print(f'O fatorial de {n}!=',end=' ') #lembrente: a função "end=' '" serve para junta todos os prints em uma linha única
+while contador > 0:
+  print(contador,'x' if contador > 1 else '=', end=' ')
+  contador -= 1
+print(fatorial, end=' ')
