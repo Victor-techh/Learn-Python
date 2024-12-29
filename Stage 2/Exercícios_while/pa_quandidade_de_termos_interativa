@@ -1,0 +1,26 @@
+#Programa que mostra os 10 primeiros termos de PA e pergunta para o usuário se ele quer mostrar mais alguns termos.
+#O programa encerrará quando ele disser que quer mostrar 0 termos.
+
+print('Gerador de PA turbo')
+#lendo os dados
+termo_1= int(input('Digite o primeiro termo da PA:\n'))
+razao = int(input('Digite a razão da PA:\n'))
+contador = 0
+#loop while
+print('Os dez primeiros termos desta PA são:', end=' ')
+mais_termos = 0
+while contador < 10:
+  termos = termo_1 + (razao * contador)
+  print(termos, end=' ')
+  contador += 1
+mais_termos = int(input('\nQuantos termos você quer mostrar a mais? [0] Para encerrar\n'))
+while mais_termos != 0:
+  contador = 0
+  while contador < mais_termos: 
+    termos = termo_1 + (razao * contador)
+    print(termos, end=' ')
+    contador += 1
+  mais_termos = int(input('\nQuantos termos você quer mostrar a mais? [0] Para encerrar\n'))
+  if mais_termos == 0:
+    print('Programa encerrado')
+#fim
