@@ -1,0 +1,19 @@
+#Programa que ler um número N inteiro qualquer e mostre na tela os N primeiros
+#elementos da Sequência de Fibonacci. Exemplo: 0 – 1 – 1 – 2 – 3 – 5 – 8
+
+print('Sequência de Fibonacci')
+print(11*'-=')
+#variaveis
+termo1 = 0
+termo2 = 1
+
+n = int(input('Digite quantos termos você quer que seja mostrado:\n'))
+cont = 3 #O contador inicia no 3 porque os dois primeiros termos da sequencia de
+#fibonacci estão sendo impressos antes do loop. 
+print(termo1, termo2, end=' ')
+while cont <= n:
+  termo3 = termo2 + termo1
+  print(termo3, end=' ')
+  termo1 = termo2 
+  termo2 = termo3
+  cont += 1
