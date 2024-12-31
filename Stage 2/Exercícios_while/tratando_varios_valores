@@ -1,0 +1,19 @@
+#Programa que ler vários números inteiros pelo teclado. 
+#O programa só vai parar quando o usuário digitar o valor 999, que é a condição de parada. 
+#No final, mostre quantos números foram digitados 
+#e qual foi a soma entre eles (desconsiderando o flag).
+
+num = int(input('Digite um número:')) 
+cont_dig = 0 #contador de numeros digitados
+soma = 0 
+while num != 999:
+  print(num)
+  cont_dig += 1
+  soma = soma + num
+  num = int(input('Digite um número:')) #Para que não seja somando o 999 o num interativo foi colodado 
+  #abaixo das iterações cont_dig e soma, do contrário seria somado 999 que é o flag.
+  if num == 999:
+    print('Encerrou')
+    print(f'Foram digitados {cont_dig} números')
+print(f'A soma dos números digitados é {soma}')
+#fim
