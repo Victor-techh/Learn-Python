@@ -12,8 +12,8 @@ while num != 999:
   soma = soma + num
   num = int(input('Digite um número:')) #Para que não seja somando o 999 o num interativo foi colodado 
   #abaixo das iterações cont_dig e soma, do contrário seria somado 999 que é o flag.
-  if num == 999:
-    print('Encerrou')
-    print(f'Foram digitados {cont_dig} números')
+    
+print('Encerrou')
+print(f'Foram digitados {cont_dig} números')
 print(f'A soma dos números digitados é {soma}')
 #fim
