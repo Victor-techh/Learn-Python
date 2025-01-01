@@ -1,0 +1,25 @@
+#programa que leia vários números inteiros pelo teclado.
+#No final da execução, mostre a média entre todos os valores e qual foi o maior e o menor valores lidos.
+#O programa deve perguntar ao usuário se ele quer ou não continuar a digitar valores.
+
+continuar = 'S'
+cont_num = soma = media = maior = menor = 0 
+while continuar.upper() in ('S'):
+  num = int(input('Digite um número: '))
+  cont_num += 1
+  soma += num
+  if cont_num == 1: #se so forem digitados 1 numero maior é igual a menor.
+    maior = menor = num
+  else: #caso contrario, ou seja se forem digitados 2 numeros ou mais.
+    if num > maior:
+      maior = num #num esta com os numero armzenados e maior tambem porem aqui ele usa o simbolo maior e 
+    #logo abaixo atualiza informando que o maior numero de num é o numero unico da variavel maior. 
+    #Isso acontece da mesma forma com a variavel menor porem ao contrario. 
+    if num < menor:
+      menor = num
+  continuar = input('Deseja continuar? [S,N]')
+media = soma / cont_num
+print(f'A média dos valores digitados é {media}.')
+print(f'O número de maior valor é {maior}')
+print(f'O número de menor valor é {menor}')
+#fim
