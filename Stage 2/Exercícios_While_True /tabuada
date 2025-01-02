@@ -1,0 +1,17 @@
+#Programa que mostre a tabuada de vários números, um de cada vez, 
+#para cada valor digitado pelo usuário. 
+#O programa será interrompido quando o número solicitado for negativo.
+
+print('+++Tabuada+++')
+som = sub = mul = div = cont = 0 #variaveis que seram utilizadas no loop for 
+texto_soma = 'SOMA'
+while True:
+  num = int(input('Digite o valor para calculo ou (-1 para encerrar): '))
+  if num < 0:
+    break
+  print(3*'-=','SOMA','=-'*3)
+  for i in range(1,11):
+    som = num + i  
+    print(f'{num} + {i} = {som}')
+print('Encerrando') #encerrando é mostrado apos o usuario digitar -1. 
+#print(f'o numero é {num} e i é {i}.')
