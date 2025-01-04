@@ -1,0 +1,25 @@
+#Programa que jogue par ou ímpar com o computador. 
+#O jogo só será interrompido quando o jogador perder, 
+#mostrando o total de vitórias consecutivas que ele conquistou no final do jogo.
+
+import random
+
+print('Jogo do Par ou Impar')
+
+cont = 0 #contador 
+
+while True:
+  comp = random.randint(0,5) #numero do computador
+  par_ou_imp = input('Par ou Impar? [P/I] ').upper()
+  num = int(input('Digite seu número:'))
+  soma_num_comp = comp + num #aqui são somados os numeros do num e comp para se obter o resultado  
+  
+  if par_ou_imp == 'P' and soma_num_comp % 2 == 0 or par_ou_imp == 'I' and soma_num_comp % 2 != 0:
+    print(f'Você ganhou, meu número foi {comp}! o resultado foi {soma_num_comp}')
+    cont += 1
+  else:
+    print(f'Ganhei! Meu número foi {comp} e o resultado foi {soma_num_comp}')
+    break
+print('Fim do Jogo!!!')
+print(f'Você ganhou {cont} vezes.')
+#fim
