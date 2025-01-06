@@ -1,0 +1,29 @@
+#Programa que leia o nome e o preço de vários produtos. 
+#O programa deverá perguntar se o usuário vai continuar ou não. 
+#No final, mostre:
+#A) qual é o total gasto na compra.
+#B) quantos produtos custam mais de R$1000.
+#C) qual é o nome do produto mais barato.
+
+print('Barraca Júlia') 
+acima_mil = cont_produtos = total = mais_barato = 0 #variaveis contadoras
+nome_barato = '' 
+while True: #loop infinito
+  produto = str(input('Nome do produto: '))
+  cont_produtos += 1 #contador dos produtos 
+  preco = float(input('Preço: '))
+  total = total + preco #recebe o valor total
+  if preco > 1000: #produtos que custam mais de Mil
+    acima_mil += 1
+  if cont_produtos == 1: # linha 18 a 24 trata sobre o produto mais barato
+    valor_barato = preco
+    nome_barato = produto
+  else:
+    if preco < mais_barato:
+      valor_barato = preco
+      nome_barato = produto
+  continua = input('Deseja continuar? [S/N]').strip().upper()
+  if continua == 'N':
+    break
+print(10*':')
+print(f'Conta:\n{acima_mil} produto acima de 1000R$\nproduto mais barato foi {nome_barato} custando {valor_barato:.2f}\nTotal {total:.2f}R$')
