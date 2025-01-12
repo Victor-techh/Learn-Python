@@ -1,0 +1,16 @@
+#Programa que gere 4 numeros aleatorios e armazena em um tupla. 
+#Ele tambem mostra qual o número maior e menor gerado. 
+
+from random import randint 
+num = () #tupla
+maior = menor = 0
+for _ in range(0,4):
+  ger_num = randint(1,15)
+  num += (ger_num,) 
+
+maior = max(num) 
+menor = min(num)
+print(f'Os números gerados foram: {num}')
+print(f'O número maior foi {maior}')
+print(f'O menor número foi {menor}')
+#fim
