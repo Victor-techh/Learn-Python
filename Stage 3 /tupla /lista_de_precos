@@ -1,0 +1,24 @@
+#Programa que tenha uma tupla única com nomes de produtos e seus 
+#respectivos preços, na sequência. No final, mostre uma listagem de preços, 
+#organizando os dados em forma tabular.
+
+print('='*37)
+print(f'Lista de Produtos e Preços')
+print('='*37)
+
+tupla_produtos = ('Notebook', 3800,
+                   'Bateria de Notebook',380,
+                   'multi-processador',340,
+                   'Fritadeira', 250,
+                   'Ferro de passar', 69.90,
+                   'Celular', 2999,
+                   'Jogo de Copos', 59.90,
+                  'Quadro Decorativo', 271,
+                   'Capa de Colchão', 63.56,
+                   'Amaciante', 17.59,)
+for pos in range(0, len(tupla_produtos)):
+  if pos % 2 == 0:
+    print(f'{tupla_produtos[pos]:.<30}',end='')
+  else:
+    print(f'{tupla_produtos[pos]:>7.2f}')
+print('='*37)
