@@ -1,0 +1,11 @@
+#programa que tenha uma tupla com várias palavras (não usar acentos).
+#Depois disso, você deve mostrar, para cada palavra, quais são as suas vogais.
+
+palavras = ('asa','sabao','dado','faca','gelo','jirimum','ak47','livro')
+
+for i in palavras: # o i itera de acordo com a quantidade de palavras da tupla
+  print(f'\nA palavra {i} tem as vogais',end=' ') #linha que irá imprimir as palavras
+  for letra in i: #letra irá iterar de acordo com a quantidade de caracteres de cada palavras.
+    if letra.lower() in 'aeiou': 
+      print(letra,end=' ') 
+  
