@@ -1,14 +1,24 @@
-#Programa que tenha uma dupla totalmente preenchida com uma contagem por extenso,
-#de zero até vinte. Seu programa deverá ler um número pelo teclado
-#(entre 0 e 20) e mostrá-lo por extenso.
+#programa que tenha uma tupla totalmente preenchida com uma contagem por extenso, 
+#de zero até vinte. Seu programa deverá ler um número pelo teclado (entre 0 e 20) 
+#e mostrá-lo por extenso.
 
-num = ('zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 
+#tupla
+numeros = ('zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 
        'nove', 'dez', 'onze', 'doze','treze', 'catorze', 'quinze', 'dezesseis', 
        'dezessete', 'dezoito', 'dezenove', 'vinte')
-
-while True: #loop que trata se é verdadeiro caso user receba
-  user = int(input('Escolha e digite um número de 0 a 20: '))
-  while user < 0 or user > 20: #loop que determina que enquanto o numero não for entre 0 e 20 será solicitado o numero
-    user = int(input('Número inválido. Digite um número de 0 a 20: '))
-  break
-print(f'Você digitou o número {num[user]}.')
+#loop 
+while True:
+  #solicitando número ao usuario com uma validação. 
+  while True:
+    num = int(input('Digite um número entre 0 e 20: '))
+    if num >= 0 and num <= 20:
+      break
+    else:
+      print('Número inválido.')
+  #Exibe o número por extenso.
+  print(f'Você digitou o número {numeros[num]}.')
+  #opção para o usuário poder continuar:
+  continuar = input('Deseja continuar? [S/N]').upper().strip()
+  if continuar != 'S':
+    break
+print('Até a próxima.')
