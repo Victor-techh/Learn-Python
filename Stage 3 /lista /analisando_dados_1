@@ -1,0 +1,28 @@
+#Faça um programa que leia 5 valores numéricos
+#e guarde-os em uma lista. No final, mostre qual foi o maior
+#e o menor valor digitado
+#e as suas respectivas posições na lista.
+
+#lendo os 5 numeros e armazenando na lista valores.
+valores = []
+for i in range(1,6):
+  valores.append(int(input(f'Digite um {i}º número: ')))
+print('=-'*40)
+print(f'Os números digitados foram {valores}.')
+
+#monstrando o maior e o menor número do lista:
+maior = valores[0]
+menor = valores[0]
+pos_maior = 0
+pos_menor = 0
+for p,i in enumerate(valores):
+  if i > maior:
+    maior = i
+    pos_maior = p
+  elif i < menor:
+    menor = i
+    pos_menor = p
+print(f'''
+O maior valor da lista é {maior} na posição {pos_maior}
+      e o menor é{menor} na posição {pos_menor}.'
+      ''')
