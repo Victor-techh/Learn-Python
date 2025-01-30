@@ -1,0 +1,21 @@
+#Programa onde o usuário possa digitar vários valores numéricos
+#e cadastre-os em uma lista.
+#Caso o número já exista lá dentro, ele não será adicionado.
+#No final, serão exibidos todos os valores únicos digitados, em ordem crescente.
+
+#lista
+valores = list()
+#usuario digita vários numeros com flag de encerramento.
+while True:
+  numero = int(input('Digite um número ou [-1] para encerrar: '))
+  if numero == -1:
+    break
+  if numero not in valores: #caso o numero NÃO EXISTA na lista ele será adicionado
+    valores.append(numero)
+if -1 in valores: #para não ser adicionado o -1 à lista ja que ele é um flag.
+  valores.remove(-1)
+#ordenando a exibição dos numero em ordem crescente:
+valores.sort()
+#Resultados
+print('=-'*50)
+print(f'Em ordem crescente, foram adicionados a lista os números\n{valores}.')
