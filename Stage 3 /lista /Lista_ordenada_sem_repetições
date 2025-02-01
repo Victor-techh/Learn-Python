@@ -1,0 +1,25 @@
+#Programa onde o usuário possa digitar cinco valores numéricos
+#e cadastre-os em uma lista, já na posição correta de inserção (sem usar o sort()).
+#No final, mostre a lista ordenada na tela.
+
+#lista e outras variaveis:
+valores = []
+
+#solicitando ao usuario os 5 valores númericos:
+for i in range(1,6):
+  num = int(input(f'Digite o {i}º valor: '))
+  if i == 1 or num > valores[-1]: #se i for igual a 1 então sera armazenado no 
+  #índice 0, ou se num for o maior número da lista valores então será armazenado
+  #último índice.
+    valores.append(num)
+  else:
+    pos = 0 #posição
+    while pos < len(valores): # Enquanto a posição for menor que o tamanho da lista...
+      if num <= valores[pos]: #Se o num for menor igual a posição da lista valores...
+        valores.insert(pos,num) #Será inserido o valor de pos e num na lista valores
+        print(f'Adicionado na posição {pos}')
+        break
+      pos += 1 
+print('-='*30)
+#mostrando resultados:
+print(f'Os números que comporam a lista foram:\n{valores}')
