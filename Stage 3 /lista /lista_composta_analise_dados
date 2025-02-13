@@ -1,0 +1,58 @@
+#Exercício 84 – Lista composta e análise de dados
+#Faça um programa que leia nome e peso de várias pessoas,
+#guardando tudo em uma lista. No final, mostre:
+#A) Quantas pessoas foram cadastradas.
+#B) Uma listagem com as pessoas mais pesadas.
+#C) Uma listagem com as pessoas mais leves.
+
+import time
+
+#apresentação:
+iniciando = ['Lista','composta','e','Análise','de','Dados']
+for i in iniciando:
+  print(f'\033[32m\033[1m{i}\033[0m',end=' ')
+  time.sleep(0.5)
+
+#solicitando ao usuário
+dados = list()
+pessoas = list()
+while True:
+  dados.append(str(input('Nome: ')))
+  dados.append(float(input('Use PONTO e não vírgula! Peso: ')))
+  pessoas.append(dados[:])
+  dados.clear()
+  r = input('Deseja continuar? [S/N]').strip().upper()#resposta para continuidade
+  if r == 'N':
+    print('.'*22)
+    print('Coleta de dados encerrada!')
+    break
+print('')
+
+#quantidade de pessoas cadastradas:
+cont = 0
+for i in pessoas:
+  cont += 1
+if cont == 1:
+  print('Foi cadastrada 1 pessoa.')
+else:
+  print(f'Foram cadastradas {cont} pessoas:')
+
+#pessoas mais pesadas e mais leves:
+maior_peso = 0
+pessoas_mais_pesadas = list()
+pessoas_mais_leves = list()
+for pessoa in pessoas: #variavel pessoa criada para iterar cada nome da lista pessoas
+  peso = pessoa[1] #variael peso criada e obtem o peso da pessoa atual
+  if peso > maior_peso: 
+    maior_peso = peso 
+    pessoas_mais_pesadas.append(pessoa)
+  elif peso == maior_peso:
+    pessoas_mais_pesadas.append(pessoa)
+  else:
+    pessoas_mais_leves.append(pessoa)
+
+print(pessoas)
+print('')
+print(f'Pessoas de maior peso:\n{pessoas_mais_pesadas}')
+print('')
+print(f'Pessoas de menor peso:\n{pessoas_mais_leves}')
