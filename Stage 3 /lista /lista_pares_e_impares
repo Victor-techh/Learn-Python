@@ -1,0 +1,38 @@
+#Exercício 85 – Listas com pares e ímpares
+#Programa onde o usuário digita sete valores
+#numéricos e cadastra em uma lista única que mantenha
+#separados os valores pares e ímpares.
+#No final, mostra os valores pares e ímpares em ordem
+#crescente.
+
+#apresentação
+texto = ['Números','Pares','e','Impares']
+for i in texto:
+  print(f'\033[33m\033[1m{i}\033[0m',end=' ') #033m se refere a cor amarela
+
+#listas
+valores = []
+pares = []
+impares = []
+
+#solicitando 7 valores ao usuario
+for v in range(1,8):
+  valor = int(input(f'Digite o {v}° valor: '))
+  valores.append(valor)
+  #separando pares e impares:
+  if valor % 2 == 0:
+    pares.append(valor)
+  elif valor % 2 != 0:
+    impares.append(valor)
+
+#Ordenando as listas pares e impares
+pares.sort()
+impares.sort()
+
+#criando a lista organizada que ira armazenar as listas pares e impares
+lista_organizada = [pares, impares]
+
+print('='*29)
+print(f'Os numeros digitados foram:\n{valores}')
+print()
+print(f'A lista em ordem crescente:\n{lista_organizada}')
