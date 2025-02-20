@@ -1,0 +1,21 @@
+#Exercício 86 – Matriz em Python
+#Programa que declare uma matriz de dimensão 3×3
+#e preencha com valores lidos pelo teclado.
+#No final, mostra a matriz na tela, com a formatação
+#correta.
+
+matriz = [[0,0,0],[0,0,0],[0,0,0]] #iniciamos a lista com tamanho determidado,
+#para receber somente 9 números.
+cont = 1 
+#como a matriz sera 3x3 então usamos o for para isso:
+#1) Solicitando números para a lista.
+for c in range(0,3): #coluna
+  for l in range(0,3): #linha
+    matriz[c][l] = int(input(f'Digite o {cont}º número de [{c},{l}]: ')) 
+    cont += 1 
+print('<>'*18)
+#b) mostrando em formato matriz 3 x 3:
+for c in range(0,3):
+  for l in range(0,3):
+    print(f'[{matriz[c][l]}]',end=' ')
+  print() #quebra de linha
