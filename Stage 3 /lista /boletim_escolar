@@ -3,7 +3,7 @@
 #contendo a média de cada um e permita que o usuário possa mostrar as notas de
 #cada aluno individualmente.
 
-print('\033[1;035;43m Boletim Escolar \033[0m')
+print('\033[1;030;44m Boletim Escolar \033[0m')
 
 #Lendo nome e notas e armazendando em uma lista
 print()
@@ -12,8 +12,8 @@ boletim = list()
 while True:
   lista_temporaria = list()
   lista_temporaria.append(input('Aluno: '))
-  lista_temporaria.append(int(input('Nota 1: ')))
-  lista_temporaria.append(int(input('Nota 2: ')))
+  lista_temporaria.append(float(input('Nota 1: ')))
+  lista_temporaria.append(float(input('Nota 2: ')))
   media = (lista_temporaria[1] + lista_temporaria[2]) / 2
   lista_temporaria.append(media)
   boletim.append(lista_temporaria[:])
@@ -26,5 +26,25 @@ print('\033[1;035;43m.\033[0m'*45)
 print(f'{("nome"):<15}{("nota 1"):<10}{("nota 2"):<10}{("média"):<10}'),0
 print('\033[1;035;43m.\033[0m'*45)
 
+#loop para exibir os dados da lista boletim com quebra de linha e formatação
 for aluno in boletim:
   print(f'{aluno[0]:<15}{aluno[1]:<11}{aluno[2]:<11}{aluno[3]:<11.1f}')
+
+#acessando as notas dos alunos individualmente.
+print('\033[1;035;43m.\033[0m'*45)
+opcao_pesquisa = input('Deseja exibir os dados de um aluno específico? [S/N]\n').strip().upper()
+if opcao_pesquisa == 'S':
+  nome = input('Digite o nome do aluno:\n').strip().upper()
+
+  for nome_aluno in boletim:
+    if nome_aluno[0].upper() == nome:
+      nota_1 = nome_aluno[1]
+      nota_2 = nome_aluno[2]
+      media = nome_aluno[3]
+      print('\033[1;035;43m.\033[0m'*45)
+      print(f'{nome} - notas {nota_1} e {nota_2} - média final {media}')
+      break
+    else: 
+      print('Aluno não encontrado!')
+else:
+  print('Encerrando o programa')
