@@ -1,0 +1,24 @@
+from collections.abc import KeysView
+#Exercício Python 090: Faça um programa que leia nome e média de um aluno,
+#guardando também a situação em um dicionário. No final, mostre o conteúdo
+#da estrutura na tela.
+
+print('\033[1;33;40m Boletim Escolar \033[0m') #formatação com uma cor e negrito
+boletim = dict()
+boletim['nome'] = input('Nome do aluno: ').strip().upper()
+boletim['nota 1'] = float(input('Digite a 1° nota: '))
+boletim['nota 2'] = float(input('Digite a 2° nota: '))
+
+boletim['média'] = (boletim['nota 1'] + boletim['nota 2']) / 2
+if boletim['média'] < 7:
+  boletim['status'] = 'REPROVADO'
+elif boletim['média'] == 7:
+  boletim['status'] = 'AF'
+else:
+  boletim['status'] = 'Aprovado'
+
+for keys in boletim.keys(): #para exibir de uma forma mais limpa e estética
+  print(f'\033[1;33;40m{keys:^10}\033[0m', end=' ') #com cor e negrito
+print()#quebra de linha
+for values in boletim.values(): #mostrar os valores com uma exibição tambem estética
+  print(f'\033[1;33m{values:^10}\033[0m', end=' ') #tambem com estética
