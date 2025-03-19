@@ -1,0 +1,54 @@
+#Exercício Python 091: Crie um programa onde 4 jogadores joguem um dado e
+#tenham resultados aleatórios. Guarde esses resultados em um dicionário em Python.
+#No final, coloque esse dicionário em ordem, sabendo que o vencedor tirou o
+#maior número no dado.
+
+from random import randint #gera numeros aleatorios
+from copy import deepcopy #copia profunda de uma dicionário
+from operator import itemgetter #para acessar o valuer dos dict
+
+#título nome
+print('\033[1;35;42m Partida de Dados \033[0m')
+#dicionário e numeros aleatorios:
+jogadas = dict()
+jogo = dict()
+
+for j in range(1,5):
+  input(f'Jogador {j}, tecle na letra (D) para jogar o dado: ').strip().lower()
+  dado = randint(1,6)
+  jogadas[f'jogador {j}'] = dado #jogadas armazena o valod de dado
+  jogo = deepcopy(jogadas) #dicionario jogo copia o dicionario jogadas
+
+#declaração da variavel ranking + organização cresc +
+#acesso a chaves e valores + inversao da ordem
+ranking = sorted(jogo.items(), key=itemgetter(1), reverse=True)
+vencedor = max(ranking, key=itemgetter(1))[0]
+print()
+print('\033[30m ° \033[0m'*17)
+print(f'\033[1;35;42m Resultado \033[0m') #titulo resultado
+print()
+
+#mostrando o resultado
+for k_r in jogo.keys():
+  print(f'\033[1;36m {k_r:^10} \033[0m',end=' ')
+print()
+for v_r in jogo.values():
+  print(f'\033[1;36m {v_r:^10} \033[0m',end=' ')
+print()
+print('\033[30m ° \033[0m'*17)
+
+#ranking
+print(f'\033[1;35;42m Ranking \033[0m')
+print()
+for rank in ranking:
+  print(f'\033[1;36m{rank[0]:^10}\033[0m', end=' ')
+print()
+print('\033[30m ° \033[0m'*17)
+
+#vencedor
+print()
+print(f'\033[1;35;42m Vencedor!!! \033[0m',end=' ')
+print()
+print(f'\n\033[1;36m {vencedor:^10} \033[0m',end=' ')
+print()
+print('\033[30m ° \033[0m'*17)
