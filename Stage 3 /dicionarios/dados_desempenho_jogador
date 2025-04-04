@@ -1,0 +1,31 @@
+#Programa que gerencia o aproveitamento de um jogador de futebol. 
+#O programa vai ler o nome do jogador e quantas partidas ele jogou. 
+#Depois vai ler a quantidade de gols feitos em cada partida.
+#No final, tudo isso será guardado em um dicionário, incluindo o total de gols
+#feitos durante o campeonato.
+
+#inicio:
+print('\033[1;31;43m GiveUp Performance \033[0m')
+
+#dicionario:
+dados = dict()
+
+#solicitando dados, declarando a soma_gols:
+dados['Jogador'] = input('Nome do jogador: ').strip().upper()
+dados['Partidas'] = int(input('Partidas jogadas: '))
+dados['Gols:'] = ''
+soma_gols = 0
+for i in range(dados['Partidas']): #iterando sob cada partida para que
+#seja solicitado a quantidade de gols e a soma do total de gols:
+  dados[f'{i+1}° jogo'] = int(input(f'Número de gols da {i+1}° partida: '))
+  soma_gols += dados[f'{i+1}° jogo']
+dados['Total de gols'] = soma_gols
+
+#amostra
+tamanho_espacos = 10
+for k in dados.keys():
+  print(f'\033[1;33m{k.ljust(tamanho_espacos)}\033[0m', end=' ')
+print()
+for v in dados.values():
+  print(f'\033[1;34m{str(v).ljust(tamanho_espacos)}\033[0m', end=' ')
+print()
