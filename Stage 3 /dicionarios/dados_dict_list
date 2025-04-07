@@ -36,6 +36,7 @@ for dicionario in lista_dicionarios:
   soma_idades += dicionario['idade']
 media_idade = soma_idades / qtd_pessoas
 
+#pessoas com idade acima da media:
 for a in lista_dicionarios:
   if a['idade'] > media_idade:
     pessoas_acima_media.append(a)
