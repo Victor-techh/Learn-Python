@@ -1,0 +1,50 @@
+#Programa que leia nome, sexo e idade de várias
+#pessoas, guardando os dados de cada pessoa em um dicionário e todos os
+#dicionários em uma lista. No final, mostre:
+#A) Quantas pessoas foram cadastradas
+#B) A média de idade
+#C) Uma lista com as mulheres
+#D) Uma lista de pessoas com idade acima da média
+
+from time import sleep
+
+#nome do programa:
+texto = 'IBGE'
+for i in texto:
+  print(f'\033[1;36m{i}\033[0m',end='')
+  sleep(0.5)
+print()
+#Solicitando a quantidade de pessoas que seram adicionadas e dicionarios:
+qtd_pessoas = int(input('Deseja registrar quantas pessoas? '))
+lista_dicionarios = list()
+mulheres = list()
+pessoas_acima_media = list()
+for i in range(qtd_pessoas):
+  dados_i = dict()
+  dados_i['nome'] = input('Nome: ').strip().upper()
+  dados_i['sexo'] = input('Sexo: ').strip().upper()
+  dados_i['idade'] = int(input('Idade: '))
+  lista_dicionarios.append(dados_i)
+  if dados_i['sexo'] == 'F':
+    mulheres.append(dados_i['nome'])
+
+#dados calculados e outras variaveis:
+lista_idades = list()
+soma_idades = 0
+for dicionario in lista_dicionarios:
+  idade = dicionario['idade']
+  soma_idades += dicionario['idade']
+media_idade = soma_idades / qtd_pessoas
+
+for a in lista_dicionarios:
+  if a['idade'] > media_idade:
+    pessoas_acima_media.append(a)
+print()
+#print(lista_dicionarios)
+print(f'foram adicionadas \033[1;36m{qtd_pessoas}\033[0m pessoas.')#A
+print(f'A media de idade é \033[1;36m{media_idade:.1f}\033[0m anos')#B
+print(f'As mulheres registradas foram \033[1;36m{mulheres}.\033[0m')#C
+
+print('As pessoa(s) com idade acima da média:')
+for p in pessoas_acima_media:
+  print(f'\033[1;36m{p}\033[0m')
