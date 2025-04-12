@@ -1,0 +1,62 @@
+#O programa que gerencie o aproveitamento de um
+#jogador de futebol, onde ele ler o nome de vários jogadores e quantas partidas
+#eles jogaram. Depois vai ler a quantidade de gols feitos em cada partida. Oo total de gols
+#feitos durante o campeonato, incluindo um sistema de visualização de detalhes do aproveitamento
+#de cada jogador.
+
+#inicio:
+print('\033[1;35;46m GiveUp Performance 2 \033[0m')
+print()
+#dicionario e lista:
+dados = dict()
+lista_dicionarios = list()
+#solicitando dados e declarando a soma_gols:
+while True:
+  dados['Jogador'] = input('Nome do jogador: ').strip().upper()
+  dados['Partidas'] = int(input('Partidas jogadas: '))
+  dados['Gols:'] = ''
+  soma_gols = 0
+  for i in range(dados['Partidas']): #iterando sob cada partida para que
+  #seja solicitado a quantidade de gols e a soma do total de gols:
+    dados[f'{i+1}° jogo'] = int(input(f'Número de gols da {i+1}° partida: '))
+    soma_gols += dados[f'{i+1}° jogo']
+  dados['Total de gols'] = soma_gols
+  lista_dicionarios.append(dados.copy())
+  while True:
+    continuar = input('Deseja adicionar mais alguem? [S/N]').strip().upper()
+    if continuar in ('S','N'): #esta sendo usado para validar a resposta. Se S
+    #ou N. Se estiver correto a condição será aceita e o codigo prossegue
+      break
+
+    else:#se a resposta estiver errada
+      print('Resposta incorreta')
+      print('Digite S ou N: ')
+  if continuar == 'N': #aqui se interrompe o loop principal
+    break
+
+#amostra
+tamanho_espacos = 10
+print('')
+for k in lista_dicionarios[0].keys():
+  print(f'\033[1;34m{k.ljust(tamanho_espacos)}\033[0m', end=' ')
+print()
+for acesso in lista_dicionarios:
+  for v in acesso.values():
+    print(f'\033[1;34m{str(v).ljust(tamanho_espacos)}\033[0m', end=' ')
+  print()
+print()
+#para solicitar os dados de um unico jogador
+detalhes_jogador = input('Deseja acessar os status de um jogador? [S/N]').strip().upper()
+if detalhes_jogador == 'S':
+  nome = input('Nome do Jogador? ').strip().upper()
+  for jogador in lista_dicionarios:
+    if jogador['Jogador'] == nome:
+      print(f'\033[1;35;46m dados do jogador {nome}:\033[0m')
+      for chave in jogador.keys():
+        print(f'\033[1;34m{chave.ljust(tamanho_espacos)}\033[0m', end=' ')
+      print()
+      for valor in jogador.values():
+        print(f'\033[1;34m{str(valor).ljust(tamanho_espacos)}\033[0m',end=' ')
+      print()
+elif detalhes_jogador == 'N':
+  print('\033[1;35;46m Finalizado \033[0m')
