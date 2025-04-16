@@ -1,0 +1,25 @@
+#Exercício Python 096: programa que tenha uma função chamada área()
+#, que receba as dimensões de um terreno retangular (largura e comprimento) 
+#e mostre a área do terreno.
+
+#apresentção:
+print('\033[1;37;41m Cálculo da Área \033[0m')
+print()
+#função da area: area = largura * comprimento
+def area(l, c):
+  """calcula a área.
+
+  Args:
+    l = largura.
+    c = comprimento
+
+  Returns:
+    A área.
+  """
+  area = l * c
+  print(f'A área é \033[1;37;41m {area}m2 \033[0m')
+  
+#solicitando os dados:
+l = float(input('Digite a largura: '))
+c = float(input('Digite o comprimento: '))
+area(l, c) 
