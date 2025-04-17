@@ -1,0 +1,21 @@
+#Programa que tenh uma função chamada linha(texto), 
+#que receba um texto qualquer como parâmetro e 
+#mostre uma mensagem com tamanho adaptável.
+
+def linha(texto): #definimos que a função que imprimira o #
+  """Imprime uma linha de '#' com o texto centralizado
+
+
+  Args:
+    texto: O texto a ser centralizado.
+  """
+  tam = len(texto) + 4 #tam armazena o numero referente ao tamanho do texto
+  print('\033[31m#\033[0m' * tam ) 
+  
+
+
+#programa principal:
+texto = input('Digite qualquer coisa: ')
+linha(texto)
+print(f'\033[1;30m  {texto}\033[0m')#inseri dois espaços no print para centralizar o texto
+linha(texto)
