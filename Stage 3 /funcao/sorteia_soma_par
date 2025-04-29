@@ -1,0 +1,41 @@
+#Exercício Python 100: Programa que tem uma lista chamada
+#números e duas funções chamadas sorteia() e somaPar().
+#A primeira função vai sortear 5 números e vai colocá-los
+#dentro da lista e a segunda função vai mostrar a soma entre
+#todos os valores pares sorteados pela função anterior.
+
+
+from random import randint
+from time import sleep
+print(':'*14)
+print('\033[1;32m  Caça Pares\033[0m')
+print(':'*14)
+print()
+
+lista_numeros = list()
+
+def sorteia(): #A função sorteia 5 numeros aleatorios entre 0 e 99. Apos o sorteio é adicionado a uma lista. 
+  for i in range(0,5):
+    i = randint(0,100)
+    lista_numeros.append(i)
+
+
+def somaPar(): #A função separa somente numeros pares e depois soma todos, mostrando no final com print interno.
+  total_pares = 0
+  for i in lista_numeros:
+    if i % 2 == 0:
+      total_pares += i
+  print()
+  print(f'\033[1;32mO valor da soma dos números pares:\033[0m')
+  print(f'\033[1;33m {total_pares}\033[0m')
+
+
+#programa principal:
+sorteia()
+print('\033[1;32mNúmeros sorteados:\033[0m')
+for i in lista_numeros: #para que se imprima um numero apos outro.
+  print(f' \033[1;33m{i}\033[0m', end='')
+  sleep(0.5)
+print()
+
+somaPar()
