@@ -1,0 +1,38 @@
+#Programa que tenha uma função chamada voto() que
+#vai receber como parâmetro o ano de nascimento de uma pessoa, retornando um
+#valor literal indicando se uma pessoa tem voto NEGADO, OPCIONAL e OBRIGATÓRIO
+#nas eleições.
+
+import datetime
+from time import sleep
+
+#apresentação do nome do programa
+print(f'\033[1;36mIdade Eleitoral\033[0m', end='')
+print()
+print()
+processando = ['processando','v','v','v']
+for i in processando:
+  print(f'\033[1;36m{i}\033[0m')
+  sleep(0.7)
+print()
+#data e ano
+data_atual = datetime.date.today()
+ano_atual = data_atual.year
+
+#Função
+def voto(ano_nasc):
+  idade = ano_atual - ano_nasc
+  if idade < 16:
+    print(f'Direito a voto negado por ter menos de 16 anos!\nSua idade é {idade}')
+  elif 16 <= idade <= 18:
+    print(f'Direito a voto opcional!. Sua idade atual é {idade}')
+  elif 18 <= idade <= 70:
+    print(f'Voto Obrigatório. Sua idade é {idade}')
+  else:
+    print(f'Voto opcional. Voce posssui idade acima de 70')
+
+
+#programa principal
+ano_nasc = int(input('Digite o seu ano de nascimento: '))
+print()
+voto(ano_nasc)
