@@ -1,0 +1,33 @@
+#Programa que tenha uma função chamada ficha(), 
+#que receba dois parâmetros opcionais: o nome de um jogador e quantos gols ele 
+#marcou. O programa deverá ser capaz de mostrar a ficha do jogador, mesmo que 
+#algum dado não tenha sido informado corretamente.
+
+#titulo do programa:
+print('\033[1;35;47m Ficha do Jogador \033[0m')
+print()
+#variaveis:
+status = dict()
+tam_espaços = 15 #para espaços entre colunas na amostra dos dados
+#funcoes:
+def ficha(nome = '', gols = 0):
+  """
+  >Programa ficha de Statos do Jogador:
+  nome: recebe o nome
+  gol: recebe o número de gols
+  """
+  if nome == '':
+    status['nome'] = 'Não informado'
+  else:
+    status['nome'] = nome
+  status['gols'] = gols
+
+
+#programa principal:
+ficha('Trevis Tener', 3)#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Aqui se insere os dados.
+for i in status.keys(): #para aprensentar os dados chaves do dict
+  print(f'\033[1;31m{i.ljust(tam_espaços)}\033[0m', end=' ')
+print()
+for i in status.values(): #para apresentar os dados values do dict
+  print(f'\033[1;31m{str(i).ljust(tam_espaços)}\033[0m', end=' ')
+print()
