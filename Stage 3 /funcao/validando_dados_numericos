@@ -1,0 +1,28 @@
+#Programa que tenha a função leiaInt(),
+#que vai funcionar de forma semelhante ‘a função input() do Python,
+#só que fazendo a validação para aceitar apenas um valor numérico.
+#Ex: n = leiaInt(‘Digite um n: ‘)
+
+#titulo do programa:
+print('\033[1;33m Validando a Entrada de Dados Numéricos\033[0m')
+
+#função:
+def leiaInt(mensagem):
+  """
+  Lê um número interio  do usuário com validação.
+  args:
+    mensagem: A mensagem a ser exibida para o usuario caso o dado não seja um número
+  Returns:
+    O número inteiro digitado pelo usuario.
+  """
+  while True: 
+    try:
+      numero = int(input(mensagem))
+      return numero
+    except ValueError:
+      print('\033[1;31mERRO: Por favor, digite um número inteiro válido.\033[0m')
+
+
+#programa principal:
+n = leiaInt('Digite um número: ')
+print(f'\033[1;35;42m Dado numérico válido. Você digitou o número: {n} \033[0m')
