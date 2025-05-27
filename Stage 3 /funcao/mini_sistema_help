@@ -1,0 +1,57 @@
+#Mini-sistema que utilize o Interactive Help do Python.
+#O usuário vai digitar o comando e o manual vai aparecer.
+#Quando o usuário digitar a palavra ‘FIM’, o programa se encerrará.
+#Importante: use cores.
+
+#titulo do programa:
+texto = 'AJUDA INTERATICA PARA COMANDOS PYTHON'
+print(f'\033[33;43m {"-" * len(texto)} \033[0m')
+print(f'\033[1;30;43m {texto} \033[0m')
+print(f'\033[33;43m {"-" * len(texto)} \033[0m')
+print()
+
+def comando():
+  """
+  A função chama automaticamente o comando Help() para explicar os comandos
+  """
+  #para que seja solicitado ao usuario quantas vezes ele quiser:
+  while True:
+    while True:
+      com = input('Digite o nome do comando: ')
+      if com: #varifica se a string está vazia.
+        break
+      else:
+        print('\033[1;31mPor favor, digite o nome de um comando válido. \033[0m')
+      
+    print()
+    print(f'\033[1;30;43m Sobre o comando "{com}"! \033[0m')
+    print()
+    help(com)
+    print()
+    #condição para caso o usuario queira continuar a usar a ajuda:
+    while True:
+      continua_programa = input('Deseja saber sobre outro comando? [S/N]').strip().upper()
+      if continua_programa in ['S','N']: #valida a resposta S ou N
+        break
+      else:
+        print('\033[1;31mResposta inválida! Digite S para sim ou N para não: \033[0m')
+      
+    if continua_programa == 'N':
+      print()
+      print('\033[1;30;43m Programa Finalizado \033[0m')
+      break
+
+
+#programa principal:
+while True: 
+  ajuda = input('Deseja ajuda com algum a comando? [S/N]').strip().upper()
+  if ajuda in  ['S', 'N']:
+    break
+  else:
+    print('\033[1;31mResposta inválida! Digite S para sim ou N para não: \033[0m')
+
+if ajuda == 'S':
+    comando()
+else:
+  print()
+  print('\033[1;30;43m Programa Finalizado \033[0m')
