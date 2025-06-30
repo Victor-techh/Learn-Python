@@ -1,0 +1,14 @@
+#desafio 114 - Valindando o acesso ao site Pudim.
+
+import urllib
+import urllib.request
+
+try:
+  site = urllib.request.urlopen('http://www.pudim.com.br')
+except urllib.error.URLError:
+  print('\033[1;34mO site não pode ser acessado no momento!!!\033[0m')
+else:
+  print('Site acessado com sucesso.')
+
+#o ideal é que esse programa seja executado em software que esteja instalado na
+#maquina.
